@@ -30,7 +30,7 @@ end
 
 default[:opsworks][:rails][:ignore_bundler_groups] = ['test', 'development']
 
-default[:deploy] = {}
+#default[:deploy] = {}
 node[:deploy].each do |application, deploy|
   default[:deploy][application][:deploy_to] = "/var/lib/tomcat7/webaaps/#{application}"
   default[:deploy][application][:chef_provider] = node[:deploy][application][:chef_provider] ? node[:deploy][application][:chef_provider] : node[:opsworks][:deploy_chef_provider]
